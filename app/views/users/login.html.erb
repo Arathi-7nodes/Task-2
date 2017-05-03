@@ -1,0 +1,28 @@
+<b><i><u><center><font size="500"><font color="green"> login </font></font></center></u></i></b>
+
+
+
+<i><b><a href="signup"<font size="50">new user??</b></i></a>
+
+<%= form_for(@user,:url => "/login") do |f| %>
+
+
+  <div class="field">
+    <%= f.label :Email  %>     :
+    <br>
+    <%= f.text_field :email  %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :password%> :
+    <br>
+    <%= f.password_field :password%>
+  </div>
+   <div class="actions">
+   <%= f.submit "login" %>
+
+
+  </div>
+<% end %>
+
+

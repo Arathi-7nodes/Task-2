@@ -1,0 +1,61 @@
+<b><i><u><center><font size="500"><font color="green"> welcome new user </font></font></center></u></i></b>
+
+<style type="text/css">
+body {
+  background-color: grey;
+}
+
+</style>
+<p align="center">
+<ul>
+<i><b>Already registerd??</b></i>
+  <li><a href="login"><font size="100">login</font></a></li>
+
+</ul>
+</p>
+
+
+<br>
+<br>
+<%= form_for(@user) do |f| %>
+
+
+  <div class="field">
+    <%= f.label :uname  %>     :
+    <br>
+    <%= f.text_field :uname  %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :password%> :
+    <br>
+    <%= f.password_field :password%>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :address%>  :
+    <br>
+    <%= f.text_field :address%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :email %>      :
+    <br>
+    <%= f.text_field :email %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :phno  %>      :
+    <br>
+    <%= f.text_field :phno %>
+  </div>
+  </p>
+  <br>
+
+
+  <div class="actions">
+   <%= f.submit "SIGN UP" %>
+  </div>
+<% end %>
+<body background="/home/user/Downloads/p.jpg">
+</body>
