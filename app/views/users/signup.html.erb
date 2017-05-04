@@ -1,5 +1,23 @@
 <b><i><u><center><font size="500"><font color="green"> welcome new user </font></font></center></u></i></b>
 
+
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> Alert!!!!!!!</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
 <style type="text/css">
 body {
   background-color: grey;
@@ -23,31 +41,33 @@ body {
   <div class="field">
     <%= f.label :uname  %>     :
     <br>
-    <%= f.text_field :uname  %>
+     <%= f.text_field:uname,placeholder:"Enter your user name" %>
   </div>
+
 <br>
   <div class="field">
     <%= f.label :password%> :
     <br>
-    <%= f.password_field :password%>
+     <%= f.text_field:password,placeholder:"Enter your password" %>
   </div>
 <br>
   <div class="field">
     <%= f.label :address%>  :
     <br>
-    <%= f.text_field :address%>
+     <%= f.text_field:address,placeholder:"Enter your address" %>
   </div>
   <br>
   <div class="field">
     <%= f.label :email %>      :
     <br>
-    <%= f.text_field :email %>
+    <%= f.text_field:email,placeholder:"enter your email" %>
   </div>
   <br>
   <div class="field">
-    <%= f.label :phno  %>      :
+    <%= f.label :phone_no  %>      :
     <br>
-    <%= f.text_field :phno %>
+     <%= f.text_field:phno,placeholder:"Enter your Phone no" %>
+
   </div>
   </p>
   <br>
@@ -57,5 +77,4 @@ body {
    <%= f.submit "SIGN UP" %>
   </div>
 <% end %>
-<body background="/home/user/Downloads/p.jpg">
-</body>
+<% end %>
