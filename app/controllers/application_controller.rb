@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+    before_action :authorize, except: [:signup, :login, :valid, :register]
   protect_from_forgery with: :exception
 
   def current_user

@@ -14,12 +14,24 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
   def valid
        user = User.find_by_email(params[:user][:email])
        password=User.find_by_password(params[:user][:password])
+       binding.pry
      if user && password
-           redirect_to "/wel"
+        session[:user_id]=user.id
+        redirect_to wel_path
+
       else
           redirect_to  "/signup"
       end
   end
+
+  def Your_Goal
+      @my_goal=@user.goals
+  end
+  def logout
+      session[:user_id] = nil
+      redirect_to signup_path, :notice => "Logged out"
+  end
+
 
   def update
     respond_to do |format|
@@ -33,7 +45,7 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
     end
   end
 
-  def create
+  def register
     # binding.pry
      @user = User.new(user_params)
     respond_to do |format|
@@ -49,8 +61,8 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
 
 
 
+
    def user_params
       params.require(:user).permit(:uname, :email, :address, :phno, :password)
   end
-
 end

@@ -3,7 +3,10 @@
 <p id="notice"><p align="center"><font color="blue"><%= notice %></p></font></p>
 <i><b><a href="signup"<font size="50">new user??</b></i></a>
 
-<%= form_for(@user,:url => "/login") do |f| %>
+<%= form_for(@user,:url => "/valid") do |f| %>
+
+
+
 
 
   <div class="field">
@@ -15,7 +18,7 @@
   <div class="field">
     <%= f.label :password%> :
     <br>
-     <%= f.text_field:password,placeholder:"Enter your password" %>
+     <%= f.text_field :password,placeholder:"Enter your password" %>
   </div>
    <div class="actions">
    <%= f.submit "login" %>
