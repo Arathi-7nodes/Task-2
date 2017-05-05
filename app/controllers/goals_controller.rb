@@ -42,13 +42,8 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
     end
     end
 
-    def logout
-      session[:user_id] = nil
-      redirect_to signup_path, :notice => "Logged out"
-    end
-
    def goal_params
-      params.require(:goal).permit(:uname, :email, :address, :phno, :password)
+      params.require(:goal).permit(:title, :start_date, :completion_date)
   end
 
 

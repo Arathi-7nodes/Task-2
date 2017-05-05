@@ -14,7 +14,7 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
   def valid
        user = User.find_by_email(params[:user][:email])
        password=User.find_by_password(params[:user][:password])
-       binding.pry
+       # binding.pry
      if user && password
         session[:user_id]=user.id
         redirect_to wel_path
